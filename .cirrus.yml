@@ -4,4 +4,4 @@ container:
   memory: 1G
 
 task:
-  script: exit 1
+  script: exit 0
