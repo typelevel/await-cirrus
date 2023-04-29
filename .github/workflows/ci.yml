@@ -1,0 +1,29 @@
+on:
+  pull_request:
+    branches: ['**']
+  push:
+    branches: ['**', '!update/**', '!pr/**']
+
+jobs:
+  check-js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+      - uses: coursier/cache-action@v6
+      - uses: VirtusLab/scala-cli-setup@main
+      - run: npm run build
+      - run: git diff --quiet index.js
+
+  check-cirrus:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ./
+        continue-on-error: true
+        id: cirrus
+      - if: steps.cirrus.outcome == 'success'
+        run: exit 1

@@ -1,0 +1,7 @@
+{
+  "name": "await-cirrus",
+  "main": "index.js",
+  "scripts": {
+    "build": "scala-cli --power package -f index.scala"
+  }
+}

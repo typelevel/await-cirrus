@@ -1,0 +1,10 @@
+name: 'Await Cirrus'
+description: 'Wait for Cirrus CI checks to complete'
+inputs:
+  poll-interval:
+    description: 'How often to poll'
+    required: false
+    default: '30'
+runs:
+  using: 'node16'
+  main: 'index.js'

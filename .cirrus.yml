@@ -1,0 +1,7 @@
+container:
+  image: alpine:latest
+  cpu: 1
+  memory: 1G
+
+task:
+  script: exit 1
