@@ -1,5 +1,6 @@
-//> using scala "3.2.2"
 //> using platform "js"
+//> using scala "3.2.2"
+//> using jsVersion "1.13.1"
 //> using dep "org.typelevel::toolkit::0.0.7"
 //> using jsModuleKind "common"
 
