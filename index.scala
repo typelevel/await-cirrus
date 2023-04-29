@@ -48,7 +48,8 @@ object index extends IOApp:
               )
               .subflatMap(_.check_suites.find(_.app.slug == "cirrus-ci"))
               .filter(_.status == "completed")
-              .map(_.conclusion == "success")
+              .subflatMap(_.conclusion)
+              .map(_ == "success")
               .value
 
           def go: IO[ExitCode] = getConclusion.flatMap {
@@ -73,7 +74,7 @@ object CheckSuites:
 case class CheckSuite(
     app: App,
     status: String,
-    conclusion: String
+    conclusion: Option[String]
 ) derives Decoder
 
 case class App(slug: String) derives Decoder
