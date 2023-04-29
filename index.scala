@@ -12,7 +12,6 @@ import org.http4s.circe.*
 import org.http4s.ember.client.*
 import io.circe.*
 
-import java.util.NoSuchElementException
 import scala.concurrent.duration.*
 
 object index extends IOApp:
