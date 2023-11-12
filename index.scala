@@ -1,8 +1,6 @@
-//> using platform "js"
-//> using scala "3.2.2"
-//> using jsVersion "1.13.1"
-//> using dep "org.typelevel::toolkit::0.0.7"
-//> using jsModuleKind "common"
+//> using platform js
+//> using toolkit typelevel:0.1.17
+//> using jsModuleKind common
 
 import cats.data.*
 import cats.effect.*
